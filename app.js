@@ -46,6 +46,20 @@ function getNameMaxMinAge(arr) {
 console.log(getNameMaxMinAge(people));
 
 // 4. Objectda turli xil kalitlar bir xil qiymatlarga ega, kalitlari o'sha qiymatlardan iborat shunday object tuzingki, bu objectning qiymatlari massiv ko'rinishidagi eski objectning kalitlarlaridan iborat bo'lsin.
+let num = {1: 20, 2: 30, 3: 20, 4: 40, 5: 30, 6: 50, 7: 40, 8: 20}
+let keyObj = {};
+for(let key in num){
+    if(!keyObj[num[key]]){
+        keyObj[num[key]] = [key]
+    }else{
+        keyObj[num[key]].push(key)
+    }
+}
+console.log(keyObj);
+// Output: {20: [1, 3, 8], 30: [2, 5], 40: [4, 7]: 50: [6]}
+
+
+
 
 // 5. Ikkita object berilgan ularning ba'zi kalitlari bir xil. Bir xil kalitlaridan iborat bo'lmagan yangi object hosil qiling.
 let obj1 = { a: 3, b: 10, c: 5, d: 7 };
